@@ -241,6 +241,8 @@ public class ApplicationMailServiceIT {
         comment.setText("Bitte stornieren!");
 
         final Application application = createApplication(person);
+        application.setStartDate(LocalDate.of(2020, 5, 29));
+        application.setEndDate(LocalDate.of(2020, 5, 29));
 
         final Person relevantPerson = createPerson("relevant", "Relevant", "Person", "relevantperson@firma.test");
         when(applicationRecipientService.getRelevantRecipients(application)).thenReturn(List.of(relevantPerson));
@@ -542,6 +544,7 @@ public class ApplicationMailServiceIT {
         office.setPermissions(singletonList(OFFICE));
 
         final Application application = createApplication(person);
+        application.setApplicationDate(LocalDate.of(2020, 5, 29));
         application.setCanceller(office);
 
         final ApplicationComment comment = new ApplicationComment(person);

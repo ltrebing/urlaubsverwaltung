@@ -9,7 +9,6 @@ import java.util.List;
 
 import static java.time.ZoneOffset.UTC;
 
-
 /**
  * Provides department demo data.
  */
@@ -18,12 +17,10 @@ class DepartmentDataProvider {
     private final DepartmentService departmentService;
 
     DepartmentDataProvider(DepartmentService departmentService) {
-
         this.departmentService = departmentService;
     }
 
-    void createTestDepartment(String name, String description, List<Person> members, List<Person> departmentHeads,
-                              List<Person> secondStageAuthorities) {
+    void createTestDepartment(String name, String description, List<Person> members, List<Person> departmentHeads, List<Person> secondStageAuthorities) {
 
         final Department department = new Department();
         department.setName(name);
